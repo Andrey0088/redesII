@@ -32,4 +32,4 @@ def index():
     return f"<h1>Conexão com o Banco de Dados bem-sucedida!</h1><p>Versão do PostgreSQL: {db_version[0]}</p>"
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5005)
