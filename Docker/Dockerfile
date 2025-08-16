@@ -1,16 +1,14 @@
 # Usar uma imagem base do Python
-FROM python:3.9-slim-bullseye
+FROM python:3.9
 # Instalar o Git
-RUN apt-get update && apt-get install -y git && apt-get upgrade -y && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y git
 
 # Define o diretório de trabalho dentro do contêiner
 WORKDIR /app
 
-# Clona o repositório
+# [cite_start]Clona o seu repositório do GitHub para dentro do contêiner [cite: 14]
+# IMPORTANTE: Substitua 'SEU_USUARIO/SEU_REPOSITORIO.git' pelo link do seu repositório
 RUN git clone https://github.com/Andrey0088/redesII.git
-
-# Define o diretório de trabalho para dentro do repositório clonado
-WORKDIR /app/redesII
 
 # Instala as dependências da aplicação
 RUN pip install --no-cache-dir -r requirements.txt
