@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  # Serviço da Aplicação Web
+  aplicacao:
+    build: . # Usa o Dockerfile no diretório atual para construir a imagem [cite: 14]
+    container_name: meu_servidor_web
+    ports:
+      - "5000:5000" # Mapeia a porta 5000 do contêiner para a porta 5000 da sua máquina
+    environment: # Define variáveis de ambiente para as credenciais do banco [cite: 13]
+      - POSTGRES_DB=meubanco
+      - POSTGRES_USER=meuusuario
+      - POSTGRES_PASSWORD=minhasenha
+    depends_on:
+      - db # Garante que o contêiner 'db' inicie antes da 'aplicacao'
+
+  # Serviço do Banco de Dados
+  db:
+    image: postgres:14-alpine # Usa uma imagem pronta do PostgreSQL
+    container_name: meu_sgbd
+    environment: # Credenciais para o banco de dados [cite: 13]
+      - POSTGRES_DB=meubanco
+      - POSTGRES_USER=meuusuario
+      - POSTGRES_PASSWORD=minhasenha
+    ports:
+      - "5432:5432" # Mapeia a porta do Postgres (opcional, bom para depuração)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data # Garante que os dados persistam
+
+volumes:
+  postgres_data:
