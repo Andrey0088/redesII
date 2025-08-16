@@ -23,7 +23,7 @@ services:
       - POSTGRES_USER=meuusuario
       - POSTGRES_PASSWORD=minhasenha
     ports:
-      - "5432:5432" # Mapeia a porta do Postgres (opcional, bom para depuração)
+      - "5433:5432" # Mapeia a porta do Postgres (opcional, bom para depuração)
     volumes:
       - postgres_data:/var/lib/postgresql/data # Garante que os dados persistam
 
