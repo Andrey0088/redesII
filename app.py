@@ -7,7 +7,7 @@ app = Flask(__name__)
 def get_db_connection():
     try:
         conn = psycopg2.connect(
-            host="db", # Nome do serviço do banco de dados no docker-compose
+            host="meubanco", # Nome do serviço do banco de dados no docker-compose
             database=os.environ.get("POSTGRES_DB"),
             user=os.environ.get("POSTGRES_USER"),
             password=os.environ.get("POSTGRES_PASSWORD")
