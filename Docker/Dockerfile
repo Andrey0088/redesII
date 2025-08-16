@@ -11,8 +11,7 @@ WORKDIR /app
 RUN git clone https://github.com/Andrey0088/redesII.git
 
 # Instala as dependências da aplicação
-# RUN pip install --no-cache-dir -r requirements.txt
-
+RUN pip install Flask psycopg2-binary
 # Expõe a porta que a aplicação vai rodar
 EXPOSE 5000
 
