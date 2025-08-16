@@ -4,7 +4,7 @@ services:
   # Serviço da Aplicação Web
   aplicacao:
     build: . # Usa o Dockerfile no diretório atual para construir a imagem [cite: 14]
-    container_name: meu_servidor_web
+    container_name: meu_servidor_web2
     ports:
       - "5000:5000" # Mapeia a porta 5000 do contêiner para a porta 5000 da sua máquina
     environment: # Define variáveis de ambiente para as credenciais do banco [cite: 13]
