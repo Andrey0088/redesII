@@ -18,4 +18,4 @@ RUN pip install Flask psycopg2-binary
 EXPOSE 5000
 
 # Comando para iniciar a aplicação quando o contêiner for iniciado
-CMD ["python", "redesII/app.py"]
+CMD ["python", "app.py"]
