@@ -17,7 +17,7 @@ services:
   # Serviço do Banco de Dados
   db:
     image: postgres:14-alpine # Usa uma imagem pronta do PostgreSQL
-    container_name: meu_sgbd
+    container_name: meu_sgbd2
     environment: # Credenciais para o banco de dados [cite: 13]
       - POSTGRES_DB=meubanco
       - POSTGRES_USER=meuusuario
