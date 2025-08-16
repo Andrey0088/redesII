@@ -1,5 +1,5 @@
 # Usar uma imagem base do Python
-FROM python:3.9
+FROM python:3.9-slim
 # Instalar o Git
 RUN apt-get update && apt-get install -y git
 
@@ -10,10 +10,12 @@ WORKDIR /app
 # IMPORTANTE: Substitua 'SEU_USUARIO/SEU_REPOSITORIO.git' pelo link do seu repositório
 RUN git clone https://github.com/Andrey0088/redesII.git
 
+RUN ls -R
+
 # Instala as dependências da aplicação
 RUN pip install Flask psycopg2-binary
 # Expõe a porta que a aplicação vai rodar
 EXPOSE 5000
 
 # Comando para iniciar a aplicação quando o contêiner for iniciado
-CMD ["python", "app.py"]
+CMD ["python", "redesII/app.py"]
